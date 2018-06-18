@@ -1,0 +1,31 @@
+{
+  "name": "node-loginPassport",
+  "version": "1.0.0",
+  "description": "Node example for login with passport and sequelize",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "*",
+    "bootstrap": "^4.1.1",
+    "bower": "^1.8.2",
+    "consolidate": "*",
+    "cookie-parser": "*",
+    "dust": "*",
+    "dustjs-helpers": "*",
+    "dustjs-linkedin": "*",
+    "express": "^4.16.3",
+    "express-session": "*",
+    "mysql": "^2.15.0",
+    "mysql2": "^1.5.1",
+    "passport": "*",
+    "passport-local": "*",
+    "path": "*",
+    "pg": "*",
+    "pg-native": "*",
+    "sequelize": "^4.31.2"
+  }
+}
