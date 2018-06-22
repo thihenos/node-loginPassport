@@ -16,10 +16,12 @@ module.exports = function (app,passport) {
         if(!user){
           res.send('User or password wrong');
         }else{
-          req.logIn(user,function(error){
-            if(error) return next(error);
-            console.log('Request Login Sucess');
-            return  res.send('Test OK');
+           req.logIn(user,function(error){
+            if(error){
+              return next(error);
+            }else{
+              return  res.send('Request Login Sucess');  
+            }
           });
         }
       })(req,res,next);

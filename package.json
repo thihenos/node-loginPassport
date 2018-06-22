@@ -14,6 +14,7 @@
     "bower": "^1.8.2",
     "consolidate": "*",
     "cookie-parser": "*",
+    "crypto": "^1.0.1",
     "dust": "*",
     "dustjs-helpers": "*",
     "dustjs-linkedin": "*",

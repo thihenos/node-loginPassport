@@ -12,6 +12,7 @@ const Sequelize = require("sequelize");
  *For SqlServer
  npm install --save tedious
  */
+
 const sequelize = new Sequelize('URI_DATABASE_CREDENTIALS',{native: true});
 
 const db = {};

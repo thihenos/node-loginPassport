@@ -25,7 +25,7 @@
 
     <input id="inputEmail" name="login" class="form-control" placeholder="username" autofocus required>
     </br>
-    <input type="password" id="inputPassword" name="senha" class="form-control" placeholder="password" required>
+    <input type="password" id="inputPassword" name="password" class="form-control" placeholder="password" required>
     </br>
     <div class="wrapper">
       <span class="group-btn">     

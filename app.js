@@ -49,7 +49,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 require('./server/config/passport')(app);
 
-
 /*
  * Setting node dust as view engine, to process all dust files
  * Set Default Ext .dust
@@ -80,8 +79,28 @@ let db = require('./server/models');
 /*
  * Sync all tables to database
  */
-db.sequelize.sync().then(function(){
+db.sequelize.sync({force:true}).then(function(){
     console.log('DB Connection - OK');
+    let crypto = require('crypto');
+	//Lib for crypting strings
+	let crypto = require('crypto');
+
+	//Creating my cipher, by using the key REPLACE_YOUR_KEY_HERE 
+	let cipher = crypto.createCipher('aes192','REPLACE_YOUR_KEY_HERE');
+
+	//Crypting ADM string
+	let crypted = cipher.update('ADM','utf8','hex');
+	crypted += cipher.final('hex');
+	if(crypted){
+	  //Creating ADM user
+	  db.User.create({username: 'ADM', password: crypted}).then(function() {
+	    console.log('ADM user inserted');
+	  }, function (error) {
+	    console.log(error);res.sendStatus(500);
+	  });
+	}else{
+	  console.log('Something went wrong with crypting the password :(');
+	}
 });
 
 // Starting Server on PORT 3000
@@ -94,5 +113,3 @@ app.listen(process.env.PORT || 3000, function(){
  * in that way, it makes the code much more cleaner
  */
  require('./server/routes')(app,passport);
-
-//insert into usuarios values ('99998','ADM','adm@adm.com','123','teste','teste','cep','bairro','cidade','uf','adm',now(),now());
